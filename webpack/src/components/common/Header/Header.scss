@@ -1,0 +1,58 @@
+@import '../../../stylesheets/variables.scss';
+@import '../../../stylesheets/colors.scss';
+
+.Header {
+  background-color: $blue;
+  z-index: 1000;
+  display: flex;
+  box-shadow: 0 0.1em black;
+  align-items: flex-end;
+  color: $white;
+  height: 6em;
+  .__left {
+    display: flex;
+    height: 100%;
+    margin-left: 4em;
+    margin-right: 2em;
+    align-items: center;
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+  .__spacer {
+    flex: 1;
+  }
+  .__right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20em;
+    .__nav-items {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 1em;
+      .__nav-item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 6em;
+        margin-left: 2em;
+        .__nav-item-text {
+          display: flex;
+          justify-content: center;
+          font-size: 1.2em;
+        }
+        .__nav-item-bottom {
+          height: 0.5em;
+          &._selected {
+            width: 50%;
+            border-radius: 0.5em;
+            border-bottom: solid $yellow 0.5em;
+          }
+        }
+      }
+    }
+  }
+}

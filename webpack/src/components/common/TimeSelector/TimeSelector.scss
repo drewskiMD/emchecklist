@@ -1,0 +1,21 @@
+@import '../../../stylesheets/colors.scss';
+@import '../../../stylesheets/variables.scss';
+
+.TimeSelector {
+  .__time-selector-control {
+    display: flex;
+    width: 8em;
+    height: 2em;
+    background-color: $white;
+    border-style: solid;
+    border-radius: 10%;
+    border-color: $blueGray;
+    border-width: 0.1em;
+    .__time-selector-left {
+      font-size: 1.5em;
+    }
+    .__time-selector-right {
+      font-size: 1.5em;
+    }
+  }
+}

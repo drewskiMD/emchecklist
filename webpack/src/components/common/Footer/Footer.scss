@@ -1,0 +1,51 @@
+@import '../../../stylesheets/variables.scss';
+@import '../../../stylesheets/colors.scss';
+
+.Footer {
+  height: 10em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+  margin-bottom: 1em;
+  color: $purpleBlue;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+  }
+  .__cpr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .__content {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2em;
+    .__left {
+      display: flex;
+      width: 50%;
+      margin-left: 25%;
+      img {
+        width: 7em;
+      }
+    }
+    .__right {
+      display: flex;
+      margin-right: 25%;
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      .__questions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .__contact-us {
+        margin-top: 1em;
+        font-size: 2em;
+      }
+    }
+  }
+
+}
