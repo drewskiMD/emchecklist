@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EM Checklist</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">	   
+	  function l(u,p)
+	  {
+		  if (u.length == 0) 
+		{
+			var e = document.getElementById("invalid");
+		  	e.style.visibility = 'visible';
+		}  
+		$.post("./login.php",{u:u, p:p}, 
+			   function(data,status)
+			   { 
+					if (data == "s")
+						{
+							document.getElementById('invalid').style.visibility = 'hidden';
+							window.location.assign("./main.php");
+						}
+					else
+						{
+							e.style.visibility = 'visible';
+						}
+				}
+			  );	  
+	  }
+    </script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="col-4"></div>
+		<div class="col-4">
+			<form action="/login.php">
+				<div class="form-group">
+					<label for="user">User:</label>
+					<input type="text" class="form-control" id="usr">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwd">
+				</div>
+				<button type="button" class="btn btn-primary" onClick="l(usr.value,pwd.value)">Submit</button>
+				<div id="invalid" style="visibility:hidden;"><h5 class="red" align="right">Ivalid Username/Password Combination</h5></div>
+			</form>
+		</div>
+		<div class="col-4"></div>
+	</div>
+
+</body>
+</html>
